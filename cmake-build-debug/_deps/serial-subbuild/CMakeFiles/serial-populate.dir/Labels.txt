@@ -1,0 +1,14 @@
+# Target labels
+ serial-populate
+# Source files and their labels
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/CMakeFiles/serial-populate
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/CMakeFiles/serial-populate.rule
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/CMakeFiles/serial-populate-complete.rule
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/serial-populate-prefix/src/serial-populate-stamp/serial-populate-build.rule
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/serial-populate-prefix/src/serial-populate-stamp/serial-populate-configure.rule
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/serial-populate-prefix/src/serial-populate-stamp/serial-populate-download.rule
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/serial-populate-prefix/src/serial-populate-stamp/serial-populate-install.rule
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/serial-populate-prefix/src/serial-populate-stamp/serial-populate-mkdir.rule
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/serial-populate-prefix/src/serial-populate-stamp/serial-populate-patch.rule
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/serial-populate-prefix/src/serial-populate-stamp/serial-populate-test.rule
+C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/_deps/serial-subbuild/serial-populate-prefix/src/serial-populate-stamp/serial-populate-update.rule

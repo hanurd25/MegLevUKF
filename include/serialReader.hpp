@@ -1,0 +1,14 @@
+//
+// Created by hanur on 19.02.2025.
+//
+
+#ifndef UNSENTENCEDKALMAN_SERIALREADER_H
+#define UNSENTENCEDKALMAN_SERIALREADER_H
+
+
+class serialReader {
+
+};
+
+
+#endif //UNSENTENCEDKALMAN_SERIALREADER_H

@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\UnsentencedKalman.dir\\src\\maglevSystemDynamics.cpp.obj",
+            "outputs": [
+                "C:\\Users\\hanur\\CLionProjects\\UnsentencedKalman\\cmake-build-debug\\vc140.pdb",
+                "CMakeFiles\\UnsentencedKalman.dir\\src\\maglevSystemDynamics.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}
