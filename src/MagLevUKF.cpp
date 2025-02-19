@@ -87,33 +87,51 @@ void MagLevUKF::runUKFLoop() {
     while (!stopThread.load()) {
         std::lock_guard<std::mutex> lock(ukfMutex);
 
+        // Control input (gravity compensation)
         Eigen::VectorXd u = Eigen::VectorXd::Zero(4);
-        u(2) = 9.81;
+        u(2) = 9.81;  // Gravity compensation
 
-        //assigning new valies to the state vecot Wm and Wc
         generateSigmaPoints(X, Wm, Wc);
 
         Eigen::MatrixXd X_pred(12, 25);
         for (int i = 0; i < 25; ++i) {
-            // 0.01 is dt
-            X_pred.col(i) = MaglevSystemDynamics::maglevSysDynamics(X.col(i), maglev, u) * 0.01 + X.col(i);
+            X_pred.col(i) = MaglevSystemDynamics::maglevSysDynamics(X.col(i), maglev, u) * dt + X.col(i);
         }
 
-
-        //initialize this shit in MagLev UKF instead??
+        //  Compute Predicted Mean and Covariance
         Eigen::VectorXd x_pred = X_pred * Wm;
         Eigen::MatrixXd P_pred = Q;
-
         for (int i = 0; i < 25; ++i) {
-            //gonna make the same for Y?!?!?
-            P_pred += Wc(i) * (X_pred.col(i) - x_pred) * (X_pred.col(i) - x_pred).transpose();
+            Eigen::VectorXd diff = X_pred.col(i) - x_pred;
+            P_pred += Wc(i) * diff * diff.transpose();
         }
 
-        //Receiving the measurements form serial communication
-        //from teensy 4.1
+        // receiving the real measurements from
+        //they need to probably be run through a neural network
+        Eigen::MatrixXd Y_pred(3, 25);
+        for (int i = 0; i < 25; ++i) {
+            Y_pred.col(i) = MaglevSystemDynamics::maglevMeasurementModel(X_pred.col(i), maglev);
+        }
+
+        // Compute Predicted Measurement Mean
+        Eigen::VectorXd y_pred = Y_pred * Wm;
+
+        Eigen::MatrixXd Pyy = R;
+        Eigen::MatrixXd Pxy = Eigen::MatrixXd::Zero(12, 3);
+        for (int i = 0; i < 25; ++i) {
+            Eigen::VectorXd y_diff = Y_pred.col(i) - y_pred;
+            Eigen::VectorXd x_diff = X_pred.col(i) - x_pred;
+            Pyy += Wc(i) * y_diff * y_diff.transpose();
+            Pxy += Wc(i) * x_diff * y_diff.transpose();
+        }
+
+        // probably need to run the camera through the neural network
+        Eigen::MatrixXd K = Pxy * Pyy.inverse();
+
+        // Step 8: Get Measurement and Update State
         Eigen::VectorXd y_meas = getMeasurements(x_pred);
-        x_est = x_pred;
-        P_est = P_pred;
+        x_est = x_pred + K * (y_meas - y_pred);
+        P_est = P_pred - K * Pyy * K.transpose();
 
         std::this_thread::sleep_for(std::chrono::milliseconds(10));  // Prevent CPU overload
     }
