@@ -11,6 +11,7 @@ public:
     serialReader(const std::string port, const int rate, const int timeout);
     void runSerialReceiver();
     void runSerialSender();
+    std::vector<std::string> serialReader::splitCSV(const std::string& line, char delimiter = ',');
 private:
     serial::Serial mySerial;
     std::string serialPort;

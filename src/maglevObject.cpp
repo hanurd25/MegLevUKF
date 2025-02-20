@@ -17,17 +17,14 @@ MaglevObject::MaglevObject() {
             (magnet.mass / 12) * (3 * magnet.r * magnet.r + magnet.l * magnet.l),
             (1.0 / 2) * magnet.mass * magnet.r * magnet.r;
 
-
     dynamics.A = Eigen::MatrixXd::Zero(12, 12);
     dynamics.A.block<6, 6>(0, 6) = Eigen::MatrixXd::Identity(6, 6);
 
     dynamics.B = Eigen::MatrixXd::Zero(12, 6);
     dynamics.B.block<6, 6>(6, 0) = Eigen::MatrixXd::Identity(6, 6);
 
-
     physical.g = 9.81;
     physical.mu0 = 4 * M_PI * 1e-7;
-
 
     solenoids.x.resize(4);
     solenoids.y.resize(4);
