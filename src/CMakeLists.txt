@@ -13,5 +13,5 @@ set(SOURCES
 )
 
 add_library(dynamicsLib ${SOURCES})
-target_include_directories(dynamicsLib PUBLIC ${publicHeaders})
+target_include_directories(dynamicsLib PUBLIC ${publicHeaders} ${RAPIDCSV_INCLUDE_DIRS})
 target_link_libraries(dynamicsLib PUBLIC Eigen3::Eigen)
