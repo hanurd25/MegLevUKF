@@ -5,7 +5,7 @@ warning: feature imgui was passed, but that is not a feature supported by test s
 Detecting compiler hash for triplet x64-windows...
 Compiler found: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/cl.exe
 All requested packages are currently installed.
-Total install time: 332 us
+Total install time: 741 us
 eigen3 provides CMake targets:
 
   # this is heuristically generated, and may not be correct
@@ -23,6 +23,6 @@ rapidcsv is header-only and can be used from CMake via:
   target_include_directories(main PRIVATE ${RAPIDCSV_INCLUDE_DIRS})
 
 -- Running vcpkg install - done
--- Configuring done (3.8s)
--- Generating done (0.0s)
+-- Configuring done (12.8s)
+-- Generating done (0.2s)
 -- Build files have been written to: C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug

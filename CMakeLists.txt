@@ -8,6 +8,9 @@ set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 
 find_package(Eigen3 CONFIG REQUIRED)
 
+find_path(RAPIDCSV_INCLUDE_DIRS "rapidcsv.h")
+
+
 include(FetchContent)
 set(SERIAL_BUILD_EXAMPLES OFF)
 FetchContent_Declare(
@@ -25,4 +28,4 @@ add_executable(UnsentencedKalman
 
 
 target_link_libraries(UnsentencedKalman PRIVATE serial Eigen3::Eigen)
-target_include_directories(UnsentencedKalman PUBLIC ${INCLUDE_DIR})
+target_include_directories(UnsentencedKalman PUBLIC ${INCLUDE_DIR} ${RAPIDCSV_INCLUDE_DIRS})

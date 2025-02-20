@@ -291,6 +291,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED_SERIAL:BOOL=OFF
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
 
+//Path to a file.
+RAPIDCSV_INCLUDE_DIRS:PATH=C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug/vcpkg_installed/x64-windows/include
+
 //Value Computed by CMake
 UnsentencedKalman_BINARY_DIR:STATIC=C:/Users/hanur/CLionProjects/UnsentencedKalman/cmake-build-debug
 

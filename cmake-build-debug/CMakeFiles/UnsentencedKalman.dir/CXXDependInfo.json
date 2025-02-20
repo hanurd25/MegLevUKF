@@ -14,6 +14,7 @@
 	"include-dirs" : 
 	[
 		"C:\\Users\\hanur\\CLionProjects\\UnsentencedKalman\\include",
+		"vcpkg_installed\\x64-windows\\include",
 		"_deps\\serial-src\\src\\..\\include",
 		"vcpkg_installed\\x64-windows\\include\\eigen3"
 	],

@@ -3,7 +3,7 @@ warning: feature imgui was passed, but that is not a feature supported by test s
 Detecting compiler hash for triplet x64-windows...
 Compiler found: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/cl.exe
 All requested packages are currently installed.
-Total install time: 332 us
+Total install time: 741 us
 eigen3 provides CMake targets:
 
   # this is heuristically generated, and may not be correct
